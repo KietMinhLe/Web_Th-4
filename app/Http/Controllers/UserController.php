@@ -70,7 +70,7 @@ class UserController extends Controller
             'user_name' => 'required|string|unique:users,user_name,' . $id . '|max:255',
             'password' => 'required|string|min:6',
             'phone' => 'required|string|max:10',
-            'email' => 'required|email|unique:users,email' . $id
+            'email' => 'required|email|unique:users,email,' . $id
         ]);
 
         $data = $request->only(['user_name', 'phone', 'email']);
